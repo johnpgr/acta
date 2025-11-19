@@ -35,11 +35,13 @@ npx sst secret set TursoToken <token>
 **Deploy**: SST to AWS Lambda
 
 ### packages/shared
+
 - Drizzle schema (source of truth)
 - Type exports for both apps
 - Zod validators
 
 ### apps/mobile (Expo)
+
 - **Stack**: Expo 55 + React Native 0.82 + React 19
 - **Navigation**: Expo Router (file-based, typed routes)
 - **Styling**: NativeWind (Tailwind for RN)
@@ -48,6 +50,7 @@ npx sst secret set TursoToken <token>
 - **Icons**: SF Symbols (iOS) / Material Icons (Android/web)
 
 ### apps/api (Nitro)
+
 - **Framework**: Nitro (nitro.build)
 - **Preset**: aws-lambda
 - **DB**: @libsql/client → Turso
@@ -87,11 +90,13 @@ sst.config.ts             # SST deployment config
 ## Database
 
 Schema defined once in `packages/shared/src/schema.ts`:
+
 - Use UUIDs for primary keys (sync safety)
 - `userId` on all tables (multi-tenant)
 - `createdAt`/`updatedAt` timestamps
 
 Mobile sync pattern:
+
 ```typescript
 import { db, syncDatabase } from "@/lib/db"
 // Write locally, then sync
@@ -111,9 +116,11 @@ await syncDatabase()
 ## Environment Variables
 
 Mobile (`.env`):
+
 - `EXPO_PUBLIC_TURSO_SYNC_URL`
 - `EXPO_PUBLIC_TURSO_TOKEN`
 
 API (SST secrets):
+
 - `TursoUrl`
 - `TursoToken`

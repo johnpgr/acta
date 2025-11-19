@@ -6,14 +6,14 @@ import * as MenubarPrimitive from '@rn-primitives/menubar';
 import { Portal } from '@rn-primitives/portal';
 import * as React from 'react';
 import {
-  Platform,
-  Pressable,
-  type StyleProp,
-  StyleSheet,
-  Text,
-  type TextProps,
-  View,
-  type ViewStyle,
+    Platform,
+    Pressable,
+    type StyleProp,
+    StyleSheet,
+    Text,
+    type TextProps,
+    View,
+    type ViewStyle,
 } from 'react-native';
 import { FadeIn } from 'react-native-reanimated';
 import { FullWindowOverlay as RNFullWindowOverlay } from 'react-native-screens';
@@ -126,7 +126,7 @@ function MenubarSubTrigger({
         )}
         {...props}>
         <>{children}</>
-        <IconSymbol name={iconName} size={16} className={cn('text-foreground ml-auto shrink-0', iconClassName)} />
+        <IconSymbol name={iconName} size={16} />
       </MenubarPrimitive.SubTrigger>
     </TextClassContext.Provider>
   );
@@ -261,10 +261,6 @@ function MenubarCheckboxItem({
             <IconSymbol
               name="checkmark"
               size={16}
-              className={cn(
-                'text-foreground',
-                Platform.select({ web: 'pointer-events-none' })
-              )}
             />
           </MenubarPrimitive.ItemIndicator>
         </View>
@@ -345,20 +341,21 @@ function MenubarShortcut({ className, ...props }: TextProps & React.RefAttribute
 }
 
 export {
-  Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarGroup,
-  MenubarItem,
-  MenubarLabel,
-  MenubarMenu,
-  MenubarPortal,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
+    Menubar,
+    MenubarCheckboxItem,
+    MenubarContent,
+    MenubarGroup,
+    MenubarItem,
+    MenubarLabel,
+    MenubarMenu,
+    MenubarPortal,
+    MenubarRadioGroup,
+    MenubarRadioItem,
+    MenubarSeparator,
+    MenubarShortcut,
+    MenubarSub,
+    MenubarSubContent,
+    MenubarSubTrigger,
+    MenubarTrigger
 };
+

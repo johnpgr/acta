@@ -35,7 +35,6 @@ function Alert({
           <IconSymbol
             name={icon}
             size={16}
-            className={cn(variant === 'destructive' && 'text-destructive', iconClassName)}
           />
         </View>
         {children}

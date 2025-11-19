@@ -4,12 +4,12 @@ import { cn } from '@/lib/utils';
 import * as AccordionPrimitive from '@rn-primitives/accordion';
 import { Platform, Pressable, View } from 'react-native';
 import Animated, {
-  FadeOutUp,
-  LayoutAnimationConfig,
-  LinearTransition,
-  useAnimatedStyle,
-  useDerivedValue,
-  withTiming,
+    FadeOutUp,
+    LayoutAnimationConfig,
+    LinearTransition,
+    useAnimatedStyle,
+    useDerivedValue,
+    withTiming,
 } from 'react-native-reanimated';
 
 function Accordion({
@@ -96,12 +96,6 @@ function AccordionTrigger({
               <IconSymbol
                 name="chevron.down"
                 size={16}
-                className={cn(
-                  'text-muted-foreground shrink-0',
-                  Platform.select({
-                    web: 'pointer-events-none translate-y-0.5 transition-transform duration-200',
-                  })
-                )}
               />
             </Animated.View>
           </Trigger>

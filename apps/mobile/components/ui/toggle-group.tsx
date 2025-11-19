@@ -1,4 +1,4 @@
-import { Icon } from '@/components/ui/icon';
+import { IconSymbol } from '@/components/ui/icon-symbol';
 import { TextClassContext } from '@/components/ui/text';
 import { toggleVariants } from '@/components/ui/toggle';
 import { cn } from '@/lib/utils';
@@ -94,9 +94,8 @@ function ToggleGroupItem({
   );
 }
 
-function ToggleGroupIcon({ className, ...props }: React.ComponentProps<typeof Icon>) {
-  const textClass = React.useContext(TextClassContext);
-  return <Icon className={cn('size-4 shrink-0', textClass, className)} {...props} />;
+function ToggleGroupIcon(props: Omit<React.ComponentProps<typeof IconSymbol>, 'className'>) {
+  return <IconSymbol size={16} {...props} />;
 }
 
 export { ToggleGroup, ToggleGroupIcon, ToggleGroupItem };

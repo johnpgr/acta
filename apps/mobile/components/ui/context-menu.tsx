@@ -5,13 +5,13 @@ import { cn } from '@/lib/utils';
 import * as ContextMenuPrimitive from '@rn-primitives/context-menu';
 import * as React from 'react';
 import {
-  Platform,
-  type StyleProp,
-  StyleSheet,
-  Text,
-  type TextProps,
-  View,
-  type ViewStyle,
+    Platform,
+    type StyleProp,
+    StyleSheet,
+    Text,
+    type TextProps,
+    View,
+    type ViewStyle,
 } from 'react-native';
 import { FadeIn } from 'react-native-reanimated';
 import { FullWindowOverlay as RNFullWindowOverlay } from 'react-native-screens';
@@ -53,7 +53,7 @@ function ContextMenuSubTrigger({
         )}
         {...props}>
         <>{children}</>
-        <IconSymbol name={iconName} size={16} className={cn('text-foreground ml-auto shrink-0', iconClassName)} />
+        <IconSymbol name={iconName} size={16} />
       </ContextMenuPrimitive.SubTrigger>
     </TextClassContext.Provider>
   );
@@ -193,10 +193,6 @@ function ContextMenuCheckboxItem({
             <IconSymbol
               name="checkmark"
               size={16}
-              className={cn(
-                'text-foreground',
-                Platform.select({ web: 'pointer-events-none' })
-              )}
             />
           </ContextMenuPrimitive.ItemIndicator>
         </View>
@@ -280,18 +276,19 @@ function ContextMenuShortcut({ className, ...props }: TextProps & React.RefAttri
 }
 
 export {
-  ContextMenu,
-  ContextMenuCheckboxItem,
-  ContextMenuContent,
-  ContextMenuGroup,
-  ContextMenuItem,
-  ContextMenuLabel,
-  ContextMenuRadioGroup,
-  ContextMenuRadioItem,
-  ContextMenuSeparator,
-  ContextMenuShortcut,
-  ContextMenuSub,
-  ContextMenuSubContent,
-  ContextMenuSubTrigger,
-  ContextMenuTrigger,
+    ContextMenu,
+    ContextMenuCheckboxItem,
+    ContextMenuContent,
+    ContextMenuGroup,
+    ContextMenuItem,
+    ContextMenuLabel,
+    ContextMenuRadioGroup,
+    ContextMenuRadioItem,
+    ContextMenuSeparator,
+    ContextMenuShortcut,
+    ContextMenuSub,
+    ContextMenuSubContent,
+    ContextMenuSubTrigger,
+    ContextMenuTrigger
 };
+

@@ -61,7 +61,7 @@ function SelectTrigger({
       )}
       {...props}>
       <>{children}</>
-      <IconSymbol name="chevron.down" size={16} aria-hidden={true} className="text-muted-foreground" />
+      <IconSymbol name="chevron.down" size={16} aria-hidden={true} />
     </SelectPrimitive.Trigger>
   );
 }
@@ -161,7 +161,7 @@ function SelectItem({
       {...props}>
       <View className="absolute right-2 flex size-3.5 items-center justify-center">
         <SelectPrimitive.ItemIndicator>
-          <IconSymbol name="checkmark" size={16} className="text-muted-foreground shrink-0" />
+          <IconSymbol name="checkmark" size={16} />
         </SelectPrimitive.ItemIndicator>
       </View>
       <SelectPrimitive.ItemText className="text-foreground group-active:text-accent-foreground select-none text-sm" />
@@ -237,16 +237,17 @@ function NativeSelectScrollView({ className, ...props }: React.ComponentProps<ty
 }
 
 export {
-  NativeSelectScrollView,
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectScrollDownButton,
-  SelectScrollUpButton,
-  SelectSeparator,
-  SelectTrigger,
-  SelectValue,
-  type Option,
+    NativeSelectScrollView,
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectScrollDownButton,
+    SelectScrollUpButton,
+    SelectSeparator,
+    SelectTrigger,
+    SelectValue,
+    type Option
 };
+

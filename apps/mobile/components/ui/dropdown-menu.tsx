@@ -5,13 +5,13 @@ import { cn } from '@/lib/utils';
 import * as DropdownMenuPrimitive from '@rn-primitives/dropdown-menu';
 import * as React from 'react';
 import {
-  Platform,
-  type StyleProp,
-  StyleSheet,
-  Text,
-  type TextProps,
-  View,
-  type ViewStyle,
+    Platform,
+    type StyleProp,
+    StyleSheet,
+    Text,
+    type TextProps,
+    View,
+    type ViewStyle,
 } from 'react-native';
 import { FadeIn } from 'react-native-reanimated';
 import { FullWindowOverlay as RNFullWindowOverlay } from 'react-native-screens';
@@ -59,7 +59,7 @@ function DropdownMenuSubTrigger({
         )}
         {...props}>
         <>{children}</>
-        <IconSymbol name={iconName} size={16} className={cn('text-foreground ml-auto shrink-0', iconClassName)} />
+        <IconSymbol name={iconName} size={16} />
       </DropdownMenuPrimitive.SubTrigger>
     </TextClassContext.Provider>
   );
@@ -200,10 +200,6 @@ function DropdownMenuCheckboxItem({
             <IconSymbol
               name="checkmark"
               size={16}
-              className={cn(
-                'text-foreground',
-                Platform.select({ web: 'pointer-events-none' })
-              )}
             />
           </DropdownMenuPrimitive.ItemIndicator>
         </View>
@@ -287,19 +283,20 @@ function DropdownMenuShortcut({ className, ...props }: TextProps & React.RefAttr
 }
 
 export {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuCheckboxItem,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuPortal,
+    DropdownMenuRadioGroup,
+    DropdownMenuRadioItem,
+    DropdownMenuSeparator,
+    DropdownMenuShortcut,
+    DropdownMenuSub,
+    DropdownMenuSubContent,
+    DropdownMenuSubTrigger,
+    DropdownMenuTrigger
 };
+

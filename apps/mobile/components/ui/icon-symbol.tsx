@@ -1,13 +1,12 @@
 // Fallback for using MaterialIcons on Android and web.
 
-import { cn } from "@/lib/utils"
 import MaterialIcons from "@expo/vector-icons/MaterialIcons"
-import { SymbolWeight, SymbolViewProps } from "expo-symbols"
-import { cssInterop } from "nativewind"
+import { SymbolViewProps, SymbolWeight } from "expo-symbols"
 import { ComponentProps } from "react"
 import { OpaqueColorValue, type StyleProp, type TextStyle } from "react-native"
 
 type IconMapping = Record<
+  //@ts-expect-error This should work.
   SymbolViewProps["name"],
   ComponentProps<typeof MaterialIcons>["name"]
 >
@@ -25,42 +24,9 @@ const MAPPING = {
   "chevron.right": "chevron-right",
   "chevron.down": "expand-more",
   "chevron.up": "expand-less",
-  "checkmark": "check",
-  "xmark": "close",
+  checkmark: "check",
+  xmark: "close",
 } as IconMapping
-
-function IconSymbolImpl({
-  name,
-  size = 24,
-  color,
-  style,
-}: {
-  name: IconSymbolName
-  size?: number
-  color?: string | OpaqueColorValue
-  style?: StyleProp<TextStyle>
-  weight?: SymbolWeight
-}) {
-  return (
-    <MaterialIcons
-      color={color}
-      size={size}
-      name={MAPPING[name]}
-      style={style}
-    />
-  )
-}
-
-cssInterop(IconSymbolImpl, {
-  className: {
-    target: "style",
-    nativeStyleToProp: {
-      height: "size",
-      width: "size",
-      color: "color",
-    },
-  },
-})
 
 /**
  * An icon component that uses native SF Symbols on iOS, and Material Icons on Android and web.
@@ -80,10 +46,11 @@ export function IconSymbol({
   weight?: SymbolWeight
 }) {
   return (
-    <IconSymbolImpl
-      name={name}
-      size={size}
+    <MaterialIcons
       color={color}
+      size={size}
+      //@ts-expect-error This should work.
+      name={MAPPING[name]}
       style={style}
     />
   )
