@@ -1,0 +1,16 @@
+{
+  "name": "@acta/shared",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "clean": "rm -rf node_modules dist"
+  },
+  "dependencies": {
+    "drizzle-orm": "catalog:",
+    "uuidv7": "^1.0.2",
+    "zod": "catalog:"
+  }
+}

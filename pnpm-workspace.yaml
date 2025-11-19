@@ -1,2 +1,17 @@
 packages:
-  - "apps/*"
+  - apps/*
+  - packages/*
+
+catalog:
+  '@libsql/client': ^0.15.15
+  drizzle-kit: ^0.31.7
+  drizzle-orm: ^0.44.7
+  eslint: ^9.25.0
+  prettier: ^3.6.2
+  typescript: ~5.9.3
+  zod: ^4.1.12
+
+linkWorkspacePackages: true
+
+onlyBuiltDependencies:
+  - esbuild

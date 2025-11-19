@@ -4,9 +4,16 @@
   "scripts": {
     "build": "nitro build",
     "dev": "nitro dev",
-    "preview": "node .output/server/index.mjs"
+    "preview": "node .output/server/index.mjs",
+    "clean": "rm -rf node_modules .output .nitro"
+  },
+  "dependencies": {
+    "@acta/shared": "workspace:*",
+    "@libsql/client": "catalog:",
+    "drizzle-orm": "catalog:"
   },
   "devDependencies": {
+    "drizzle-kit": "catalog:",
     "h3": "^1.15.4",
     "nitropack": "^2.12.4"
   }

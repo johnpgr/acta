@@ -9,7 +9,8 @@
     "ios": "expo run:ios",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "clean": "rm -rf node_modules .expo ios/build android/build"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -40,6 +41,11 @@
     "@rn-primitives/toggle": "^1.2.0",
     "@rn-primitives/toggle-group": "^1.2.0",
     "@rn-primitives/tooltip": "^1.2.0",
+    "@acta/shared": "workspace:*",
+    "drizzle-orm": "catalog:",
+    "expo-sqlite": "16.1.0-canary-20251118-8f7ee64",
+    "expo-secure-store": "15.0.8-canary-20251118-8f7ee64",
+    "react-native-get-random-values": "~1.11.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "expo": "55.0.0-canary-20251118-8f7ee64",
@@ -69,9 +75,9 @@
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
-    "eslint": "^9.25.0",
+    "eslint": "catalog:",
     "eslint-config-expo": "10.0.1-canary-20251118-8f7ee64",
-    "prettier": "^3.6.2",
+    "prettier": "catalog:",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.4.18"
   },

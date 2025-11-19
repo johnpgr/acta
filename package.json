@@ -1,5 +1,5 @@
 {
-  "name": "expo-55",
+  "name": "acta",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,11 +9,12 @@
     "lint": "pnpm -r run lint",
     "format": "prettier --write .",
     "mobile": "pnpm --filter @acta/mobile",
-    "api": "pnpm --filter @acta/api"
+    "api": "pnpm --filter @acta/api",
+    "clean": "pnpm -r run clean && rm -rf node_modules"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "typescript": "~5.9.2"
+    "prettier": "catalog:",
+    "typescript": "catalog:"
   },
   "prettier": {
     "semi": false
