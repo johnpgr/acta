@@ -24,7 +24,7 @@ export default function Dashboard() {
   }, [])
 
   const { data } = useLiveQuery(
-    db.select().from(routines).orderBy(desc(routines.createdAt)),
+    db.select().from(routines).orderBy(desc(routines.id)),
   )
 
   return (
