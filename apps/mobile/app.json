@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "expo-55",
-    "slug": "expo-55",
+    "name": "acta",
+    "slug": "acta",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "expo55",
+    "scheme": "acta",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.thejonyboybr.expo55"
+      "bundleIdentifier": "com.thejonyboybr.acta"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,7 +21,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.thejonyboybr.expo55"
+      "package": "com.thejonyboybr.acta"
     },
     "web": {
       "bundler": "metro",
