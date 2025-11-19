@@ -3,7 +3,7 @@ packages:
   - packages/*
 
 catalog:
-  '@libsql/client': ^0.15.15
+  "@libsql/client": ^0.15.15
   drizzle-kit: ^0.31.7
   drizzle-orm: ^0.44.7
   eslint: ^9.25.0

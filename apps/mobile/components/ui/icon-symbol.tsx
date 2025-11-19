@@ -6,7 +6,6 @@ import { ComponentProps } from "react"
 import { OpaqueColorValue, type StyleProp, type TextStyle } from "react-native"
 
 type IconMapping = Record<
-  //@ts-expect-error This should work.
   SymbolViewProps["name"],
   ComponentProps<typeof MaterialIcons>["name"]
 >
@@ -49,7 +48,6 @@ export function IconSymbol({
     <MaterialIcons
       color={color}
       size={size}
-      //@ts-expect-error This should work.
       name={MAPPING[name]}
       style={style}
     />

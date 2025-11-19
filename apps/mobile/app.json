@@ -42,6 +42,7 @@
           }
         }
       ],
+      ["expo-sqlite", { "useLibSQL": true }],
       "expo-font",
       "expo-web-browser"
     ],

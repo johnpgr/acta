@@ -1,9 +1,9 @@
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { cn } from '@/lib/utils';
-import * as CheckboxPrimitive from '@rn-primitives/checkbox';
-import { Platform } from 'react-native';
+import { IconSymbol } from "@/components/ui/icon-symbol"
+import { cn } from "@/lib/utils"
+import * as CheckboxPrimitive from "@rn-primitives/checkbox"
+import { Platform } from "react-native"
 
-const DEFAULT_HIT_SLOP = 24;
+const DEFAULT_HIT_SLOP = 24
 
 function Checkbox({
   className,
@@ -13,33 +13,35 @@ function Checkbox({
   ...props
 }: CheckboxPrimitive.RootProps &
   React.RefAttributes<CheckboxPrimitive.RootRef> & {
-    checkedClassName?: string;
-    indicatorClassName?: string;
-    iconClassName?: string;
+    checkedClassName?: string
+    indicatorClassName?: string
+    iconClassName?: string
   }) {
   return (
     <CheckboxPrimitive.Root
       className={cn(
-        'border-input dark:bg-input/30 size-4 shrink-0 rounded-[4px] border shadow-sm shadow-black/5',
+        "border-input dark:bg-input/30 size-4 shrink-0 rounded-[4px] border shadow-sm shadow-black/5",
         Platform.select({
-          web: 'focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive peer cursor-default outline-none transition-shadow focus-visible:ring-[3px] disabled:cursor-not-allowed',
-          native: 'overflow-hidden',
+          web: "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive peer cursor-default outline-none transition-shadow focus-visible:ring-[3px] disabled:cursor-not-allowed",
+          native: "overflow-hidden",
         }),
-        props.checked && cn('border-primary', checkedClassName),
-        props.disabled && 'opacity-50',
-        className
+        props.checked && cn("border-primary", checkedClassName),
+        props.disabled && "opacity-50",
+        className,
       )}
       hitSlop={DEFAULT_HIT_SLOP}
-      {...props}>
+      {...props}
+    >
       <CheckboxPrimitive.Indicator
-        className={cn('bg-primary h-full w-full items-center justify-center', indicatorClassName)}>
-        <IconSymbol
-          name="checkmark"
-          size={12}
-        />
+        className={cn(
+          "bg-primary h-full w-full items-center justify-center",
+          indicatorClassName,
+        )}
+      >
+        <IconSymbol name="checkmark" size={12} />
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
-  );
+  )
 }
 
-export { Checkbox };
+export { Checkbox }
