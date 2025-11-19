@@ -1,8 +1,7 @@
-import { Icon } from '@/components/ui/icon';
+import { IconSymbol } from '@/components/ui/icon-symbol';
 import { TextClassContext } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 import * as AccordionPrimitive from '@rn-primitives/accordion';
-import { ChevronDown } from 'lucide-react-native';
 import { Platform, Pressable, View } from 'react-native';
 import Animated, {
   FadeOutUp,
@@ -94,8 +93,8 @@ function AccordionTrigger({
             )}>
             <>{children}</>
             <Animated.View style={chevronStyle}>
-              <Icon
-                as={ChevronDown}
+              <IconSymbol
+                name="chevron.down"
                 size={16}
                 className={cn(
                   'text-muted-foreground shrink-0',

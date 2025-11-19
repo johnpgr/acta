@@ -1,10 +1,9 @@
-import { Icon } from '@/components/ui/icon';
+import { IconSymbol, type IconSymbolName } from '@/components/ui/icon-symbol';
 import { NativeOnlyAnimatedView } from '@/components/ui/native-only-animated-view';
 import { TextClassContext } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 import * as MenubarPrimitive from '@rn-primitives/menubar';
 import { Portal } from '@rn-primitives/portal';
-import { Check, ChevronDown, ChevronRight, ChevronUp } from 'lucide-react-native';
 import * as React from 'react';
 import {
   Platform,
@@ -109,7 +108,7 @@ function MenubarSubTrigger({
     inset?: boolean;
   }) {
   const { open } = MenubarPrimitive.useSubContext();
-  const icon = Platform.OS === 'web' ? ChevronRight : open ? ChevronUp : ChevronDown;
+  const iconName: IconSymbolName = Platform.OS === 'web' ? 'chevron.right' : open ? 'chevron.up' : 'chevron.down';
   return (
     <TextClassContext.Provider
       value={cn(
@@ -127,7 +126,7 @@ function MenubarSubTrigger({
         )}
         {...props}>
         <>{children}</>
-        <Icon as={icon} className={cn('text-foreground ml-auto size-4 shrink-0', iconClassName)} />
+        <IconSymbol name={iconName} size={16} className={cn('text-foreground ml-auto shrink-0', iconClassName)} />
       </MenubarPrimitive.SubTrigger>
     </TextClassContext.Provider>
   );
@@ -259,10 +258,11 @@ function MenubarCheckboxItem({
         {...props}>
         <View className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
           <MenubarPrimitive.ItemIndicator>
-            <Icon
-              as={Check}
+            <IconSymbol
+              name="checkmark"
+              size={16}
               className={cn(
-                'text-foreground size-4',
+                'text-foreground',
                 Platform.select({ web: 'pointer-events-none' })
               )}
             />

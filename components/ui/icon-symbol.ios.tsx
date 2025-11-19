@@ -10,7 +10,7 @@ export function IconSymbol({
 }: {
   name: SymbolViewProps["name"]
   size?: number
-  color: string
+  color?: string
   style?: StyleProp<ViewStyle>
   weight?: SymbolWeight
 }) {
@@ -30,3 +30,5 @@ export function IconSymbol({
     />
   )
 }
+
+export type IconSymbolName = SymbolViewProps["name"]

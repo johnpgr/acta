@@ -1,7 +1,6 @@
-import { Icon } from '@/components/ui/icon';
+import { IconSymbol, type IconSymbolName } from '@/components/ui/icon-symbol';
 import { Text, TextClassContext } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
-import type { LucideIcon } from 'lucide-react-native';
 import * as React from 'react';
 import { View, type ViewProps } from 'react-native';
 
@@ -14,7 +13,7 @@ function Alert({
   ...props
 }: ViewProps &
   React.RefAttributes<View> & {
-    icon: LucideIcon;
+    icon: IconSymbolName;
     variant?: 'default' | 'destructive';
     iconClassName?: string;
   }) {
@@ -33,9 +32,10 @@ function Alert({
         )}
         {...props}>
         <View className="absolute left-3.5 top-3">
-          <Icon
-            as={icon}
-            className={cn('size-4', variant === 'destructive' && 'text-destructive', iconClassName)}
+          <IconSymbol
+            name={icon}
+            size={16}
+            className={cn(variant === 'destructive' && 'text-destructive', iconClassName)}
           />
         </View>
         {children}
