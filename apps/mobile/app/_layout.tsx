@@ -2,7 +2,7 @@ import { PortalHost } from "@rn-primitives/portal"
 import { Stack } from "expo-router"
 import { StatusBar } from "expo-status-bar"
 import "react-native-reanimated"
-import "./global.css"
+import "../global.css"
 
 import { useColorScheme } from "@/hooks/use-color-scheme"
 import { SafeAreaProvider } from "react-native-safe-area-context"
